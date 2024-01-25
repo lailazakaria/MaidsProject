@@ -9,7 +9,7 @@ import { UserServicesService } from 'src/app/user/services/user-services.service
 export class UserListComponentComponent {
   users: any[] = [];
   currentPage: number = 1;
-  pages!: number;
+  totalPages: number = 0;
   loading: boolean = false;
 
   constructor(private userService: UserServicesService) {}
@@ -23,12 +23,25 @@ export class UserListComponentComponent {
     this.userService.getUsers(this.currentPage).subscribe(
       (data: any) => {
         this.users = data.data;
-        this.pages = data.total_pages;
+        this.totalPages = data.total_pages;
         this.loading = false;
       },
       (error) => {
         console.error('Error fetching users', error);
       }
     );
+  }
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.loadUsers();
+    }
+  }
+
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.loadUsers();
+    }
   }
 }

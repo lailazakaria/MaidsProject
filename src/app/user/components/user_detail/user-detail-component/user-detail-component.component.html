@@ -1,1 +1,7 @@
-<p>user-detail-component works!</p>
+<div *ngIf="user">
+    <img [src]="user.avatar" alt="User Avatar">
+    <p>{{ user.first_name }} {{ user.last_name }}</p>
+    <p>User ID: {{ user.id }}</p>
+
+</div>
+

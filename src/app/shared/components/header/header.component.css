@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.search-field {
+  margin-right: 20px;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #007bff;
+}

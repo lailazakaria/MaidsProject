@@ -5,7 +5,7 @@ import { UserDetailComponentComponent } from './components/user_detail/user-deta
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [UserListComponentComponent, UserDetailComponentComponent],
+  declarations: [UserListComponentComponent, UserDetailComponentComponent,],
   imports: [CommonModule, HttpClientModule],
   exports: [UserDetailComponentComponent, UserListComponentComponent],
 })
