@@ -8,11 +8,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class HeaderComponent {
 
   @Output() search = new EventEmitter<string>();
-  loading: boolean = false;
+
   
   onSearchInput(event: Event) {
     const value = (event.target as HTMLInputElement).value;
     this.search.emit(value);
+    console.log(value)
   }
 }
 

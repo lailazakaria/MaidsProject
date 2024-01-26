@@ -1,7 +1,12 @@
+<div class="loader_container" *ngIf="loading">
+  <div class="loader"></div>
+</div>
+<button (click)="moveBack()">
+    <h4>العودة</h4>
+</button>
 <div *ngIf="user">
     <img [src]="user.avatar" alt="User Avatar">
     <p>{{ user.first_name }} {{ user.last_name }}</p>
     <p>User ID: {{ user.id }}</p>
 
 </div>
-

@@ -1,6 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+.loader_container{
+ margin: 40vh 47%;
+}
+.loader {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.loader:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid black;
+  border-color: black transparent black transparent;
+  animation: loader 1.2s linear infinite;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
