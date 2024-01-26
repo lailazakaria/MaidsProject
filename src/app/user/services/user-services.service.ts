@@ -25,11 +25,6 @@ export class UserServicesService {
     }
   }
 
-  // getUserDetails(id: number): Observable<any> {
-  //   return this.http
-  //     .get(`${this.baseUrl}/${id}`)
-  //     .pipe(map((response: any) => response.data));
-  // }
     getUserDetails(id: number): Observable<any> {
     if (this.userDetailsCache.has(id)) {
       return of(this.userDetailsCache.get(id));

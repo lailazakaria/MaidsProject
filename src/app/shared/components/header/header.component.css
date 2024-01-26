@@ -2,10 +2,17 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #AC7D88;
+  padding: 1.3rem;
+  background-color: var(--light-purple-color);
 }
 
 .search-field {
   margin-right: 20px;
+}
+.search-field input{
+    padding: 10px;
+    width: 100%;
+  border-radius: 10px;
+  border: none;
+
 }

@@ -1,11 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --dark-purple-color: #6F2877;
+  --medieum-purple-color: #923F98;
+  --light-purple-color: #B989BD;
+}
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .loader_container{
- margin: 40vh 47%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .loader {
   display: inline-block;
@@ -19,8 +28,8 @@
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid black;
-  border-color: black transparent black transparent;
+  border: 6px solid var(--light-purple-color);
+  border-color: var(--light-purple-color) transparent var(--light-purple-color) transparent;
   animation: loader 1.2s linear infinite;
 }
 @keyframes loader {
@@ -30,4 +39,15 @@
   100% {
     transform: rotate(360deg);
   }
+}
+ button {
+    width: 12%;
+    background-color: #6F2877;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
 }

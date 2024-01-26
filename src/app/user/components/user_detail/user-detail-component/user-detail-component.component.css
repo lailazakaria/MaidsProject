@@ -1,0 +1,35 @@
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    width: 50%;
+}
+.image{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin: 0 auto;
+}
+img {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 50%;
+   
+  }
+  .card {
+    width: 25%;
+    margin-bottom: 1rem;
+    border: 1px solid var(--dark-purple-color);
+    border-radius: 10px;
+    padding: 0.7rem;
+    cursor: pointer;
+    background-color: #ffe;
+   
+  }
+  h5{
+    padding: 5px;
+  }

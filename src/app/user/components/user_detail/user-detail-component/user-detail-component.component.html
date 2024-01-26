@@ -1,12 +1,17 @@
 <div class="loader_container" *ngIf="loading">
   <div class="loader"></div>
 </div>
-<button (click)="moveBack()">
-    <h4>العودة</h4>
-</button>
-<div *ngIf="user">
-    <img [src]="user.avatar" alt="User Avatar">
-    <p>{{ user.first_name }} {{ user.last_name }}</p>
-    <p>User ID: {{ user.id }}</p>
+<div class="container">
+  <div class="card" *ngIf="user">
+    <div class="image">
+    <img [src]="user.avatar" alt="User Avatar" /></div>
+    <div>
+      <h5>User ID: {{ user.id }}</h5>
+      <h5>Name: {{ user.first_name }} {{ user.last_name }}</h5>
+      <h5>Email: {{ user.email }}</h5>
+      <div class="btn">
+      <button (click)="moveBack()">Back</button></div>
+    </div>
+  </div>
 
 </div>

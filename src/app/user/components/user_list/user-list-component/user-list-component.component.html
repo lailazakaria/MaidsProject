@@ -4,36 +4,41 @@
 </div>
 <div class="container" *ngIf="!loading && searchText === ''">
   <div class="user-list">
-    <div class="card-deck">
-      <div *ngFor="let user of users" class="card">
-        <div
-          (click)="navigateToDetail(user.id.toString())"
-          class="course-container"
-        >
-          <img [src]="user.avatar" class="card-img-top" alt="User Avatar" />
-          <div class="card-body">
-            <h5 class="card-title">
-              {{ user.first_name }} {{ user.last_name }}
-            </h5>
-          </div>
+    <div *ngFor="let user of users" class="card">
+      <div (click)="navigateToDetail(user.id.toString())">
+        <img [src]="user.avatar" alt="User Avatar" />
+
+        <div class="content">
+          <h5 class="card-name">{{ user.first_name }} {{ user.last_name }}</h5>
         </div>
       </div>
     </div>
   </div>
 
   <div class="btn">
-    <button *ngIf="currentPage != 1" (click)="prevPage()">Previous</button>
-    <button *ngIf="totalPages != currentPage" (click)="nextPage()">Next</button>
+    <button
+      [ngClass]="{ disabled: currentPage === 1 }"
+      (click)="prevPage()"
+      [disabled]="currentPage === 1"
+    >
+      Previous
+    </button>
+    <button
+      [ngClass]="{ disabled: totalPages === currentPage }"
+      (click)="nextPage()"
+      [disabled]="totalPages === currentPage"
+    >
+      Next
+    </button>
   </div>
 </div>
-<div
-  (click)="navigateToDetail(user_search.id.toString())"
-  class="course-container"
-  *ngIf="searchText != '' && user_search != null && !loading"
->
-  <img [src]="user_search.avatar" class="card-img-top" alt="User Avatar" />
-  <div class="card-body">
-    <h5 class="card-title">
+<div class="user-list user-search">
+  <div
+    (click)="navigateToDetail(user_search.id.toString())"
+    class="card"
+    *ngIf="searchText != '' && user_search != null && !loading">
+    <img [src]="user_search.avatar" alt="User Avatar" />
+    <h5 class="card-name">
       {{ user_search.first_name }} {{ user_search.last_name }}
     </h5>
   </div>

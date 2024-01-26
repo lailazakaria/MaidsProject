@@ -27,7 +27,7 @@ export class UserDetailComponentComponent {
   }
 
   loadUserDetails() {
-    this.loading=true
+    this.loading = true;
     this.userService.getUserDetails(this.userId).subscribe(
       (data: any) => {
         this.user = data;
