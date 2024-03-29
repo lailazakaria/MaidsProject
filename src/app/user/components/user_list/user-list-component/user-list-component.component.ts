@@ -9,14 +9,17 @@ import { UserServicesService } from 'src/app/user/services/user-services.service
   styleUrls: ['./user-list-component.component.css'],
 })
 export class UserListComponentComponent {
- users: any[] = [];
+  users: any[] = [];
   currentPage: number = 1;
   totalPages!: number;
   loading: boolean = false;
   searchText: string = '';
   user_search?: user;
 
-  constructor(private userService: UserServicesService, private route: Router) { }
+  constructor(
+    private userService: UserServicesService,
+    private route: Router
+  ) {}
 
   ngOnInit() {
     this.loadUsers();

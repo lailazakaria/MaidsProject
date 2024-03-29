@@ -5,12 +5,11 @@ import { UserDetailComponentComponent } from './user/components/user_detail/user
 
 const routes: Routes = [
   { path: '', component: UserListComponentComponent },
-  
   { path: 'user/:id', component: UserDetailComponentComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

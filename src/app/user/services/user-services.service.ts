@@ -9,7 +9,6 @@ export class UserServicesService {
   private cachedUsers: any[] = [];
   private userDetailsCache: Map<number, any> = new Map();
   private baseUrl = 'https://reqres.in/api/users';
-  
 
   constructor(private http: HttpClient) {}
   getUsers(page: number): Observable<any[]> {
@@ -25,7 +24,7 @@ export class UserServicesService {
     }
   }
 
-    getUserDetails(id: number): Observable<any> {
+  getUserDetails(id: number): Observable<any> {
     if (this.userDetailsCache.has(id)) {
       return of(this.userDetailsCache.get(id));
     } else {

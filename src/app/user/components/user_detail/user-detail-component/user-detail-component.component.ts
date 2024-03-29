@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { user } from 'src/app/models/user';
 import { UserServicesService } from 'src/app/user/services/user-services.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { UserServicesService } from 'src/app/user/services/user-services.service
 })
 export class UserDetailComponentComponent {
   userId!: number;
-  user: any;
+  user!: user;
   loading: boolean = false;
 
   constructor(
